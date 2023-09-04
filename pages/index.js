@@ -1,3 +1,7 @@
-const Home = () => <h1>Hello world!</h1>;
+import Heading from "../components/Heading";
+
+const Home = () => {
+  return <Heading text="Home page" />;
+};
 
 export default Home;
