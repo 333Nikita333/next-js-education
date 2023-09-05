@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../styles/Navbar.module.scss";
@@ -14,7 +15,12 @@ const Navbar = () => {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles.logo}>Mykyta</div>
+      <div>
+        {/* Image serves to solve a lot of problems related to the work 
+         of images: lazy loading, showing a preloader, 
+         loading optimal versions of an image using srcSet*/}
+        <Image src="/logo.png" height="60" width="60" alt="NextJS" />
+      </div>
       <div className={styles.links}>
         {navigation.map(({ id, title, path }) => (
           <Link legacyBehavior key={id} href={path}>
