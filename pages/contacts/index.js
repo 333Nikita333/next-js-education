@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Heading from "../../components/Heading";
+import Link from "next/link";
 
 // getStaticProps - in fact, a request is made
 // on the server, not on the client, and returns
@@ -29,7 +30,9 @@ const Contacts = ({ contacts }) => {
         {contacts &&
           contacts.map(({ id, name, email }) => (
             <li key={id}>
-              <strong>{name}</strong>({email})
+              <Link href={`/contacts/${id}`}>
+                {name}({email})
+              </Link>
             </li>
           ))}
       </ul>
