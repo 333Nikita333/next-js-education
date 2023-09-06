@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import { FC } from "react";
+import { AppProps } from "next/app";
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import nextJsImage from "../public/nextJsImage.png";
 import "../styles/globals.scss";
 
-const MyApp = ({ Component, pageProps }) => {
+const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Head>
