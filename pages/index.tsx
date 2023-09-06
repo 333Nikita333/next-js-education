@@ -7,18 +7,24 @@ import { socialType } from "../types";
 import { FC } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${process.env.API_HOST}/socials/`);
-  const data = await response.json();
+  try {
+    const response = await fetch(`${process.env.API_HOST}/socials/`);
+    const data = await response.json();
 
-  if (!data) {
+    if (!data) {
+      return {
+        notFound: true,
+      };
+    }
+
     return {
-      notFound: true,
+      props: { socials: data },
+    };
+  } catch {
+    return {
+      props: { socials: null },
     };
   }
-
-  return {
-    props: { socials: data },
-  };
 };
 
 type socialsTypeProps = {
