@@ -1,30 +1,18 @@
 "use client";
-import { getPostsBySearch } from "@/services/getPosts"; // 1-ый метод и 3-ый метод
-// import { usePosts } from "@/store"; // 2-ый метод
+import useSWR from "swr";
 import { FormEventHandler, useState } from "react";
-import useSWR from "swr"; // 3-ой метод 
+import { getPostsBySearch } from "@/services/getPosts";
 
 type Props = {
   onSearch: (value: any[]) => void;
 };
 
 const PostSearch = () => {
-  const { mutate } = useSWR("posts"); // 3-ой метод 
+  const { mutate } = useSWR("posts");
   const [search, setSearch] = useState<string>("");
-  // 2-ой метод (описано в blog/page.tsx)
-  // const getPostsBySearch = usePosts((state) => state.getPostsBySearch); // 2-ый метод
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();
-
-    // 1-ой метод (описано в blog/page.tsx)
-    // const posts = await getPostsBySearch(search);
-    // onSearch(posts);
-
-    // 2-ой метод (описано в blog/page.tsx)
-    // await getPostsBySearch(search);
-    
-    // 3-ой метод (описано в blog/page.tsx)
     const posts = await getPostsBySearch(search);
     mutate(posts);
   };
