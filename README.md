@@ -1,6 +1,4 @@
-# Next 13
-
-## Handlers API
+# API endpoints in NextJS
 
 To create API routes inside the `/app` directory, as a rule, a subdirectory `/api` is created with its own folders, inside which a file called `route.ts` is created.
 
