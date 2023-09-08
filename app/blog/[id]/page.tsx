@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 async function getData(id: string) {
   const response = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${id}`,
+    `api/posts/${id}`,
     {
       next: {
         revalidate: 60,

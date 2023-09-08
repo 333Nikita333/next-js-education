@@ -1,25 +1,92 @@
 # Next 13
 
-## Server and client components
+## Handlers API
 
-![React components](example-1.webp)
+To create API routes inside the `/app` directory, as a rule, a subdirectory `/api` is created with its own folders, inside which a file called `route.ts` is created.
 
-### Attachment rules
+If the file is found along the path `/app/api/posts/`, then the request address will be `/api/posts`.
 
-- you cannot import a server component inside a client component
-- you can forward server components to client ones as `children`
+`route.ts` itself must export an object with functions by HTTP method names: `GET`, `POST`, `DELETE` and so on.
 
-![Page example](example-2.avif)
+For example:
 
-Use client components when:
+```typescript
+export async function GET(req: Request) {
+  return NextResponse.json(currentPosts);
+}
+```
 
-- need to use hooks
-- when event handlers for user actions are needed
-- when using the browser API
-- when a class component is used
+### Rules for using API handlers and pages
 
-Use server components when:
+| Page               | Route            | Result      |
+| ------------------ | ---------------- | ----------- |
+| app/page.js        | app/route.js     | 💥 Conflict |
+| app/page.js        | app/api/route.js | 👌 Valid    |
+| app/[user]/page.js | app/api/route.js | 👌 Valid    |
 
-- you receive data through the server API
-- when you need direct access to backend resources
-- when sensitive information is used (API keys, tokens, etc.)
+### Data extraction
+
+```typescript
+// getting verified parameters
+
+export async function GET(req: Request) {
+  const { searchParams } = new URL(req.url);
+
+  const query = searchParams.get("q");
+
+  // some logic
+
+  return NextResponse.json(currentPosts);
+}
+```
+
+```typescript
+// getting the request body
+
+export async function POST(req: Request) {
+  const body = await req.json();
+
+  console.log(body);
+
+  return NextResponse.json({ message: "done" });
+}
+```
+
+```typescript
+// getting URL parameters
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { id: string } }
+) {
+  const id = params?.id;
+
+  // some logic for delete post by id
+
+  return NextResponse.json({ id });
+}
+```
+
+### Built-in functions
+
+```typescript
+import { headers, cookies } from "next/headers";
+
+export async function GET(req: Request) {
+  const headersList = headers();
+  const cookiesList = cookies();
+
+  const type = headersList.get("Content-Type");
+  const Cookie_1 = cookiesList.get("Cookie_1")?.value;
+
+  return NextResponse.json({});
+}
+```
+
+```typescript
+import { redirect } from "next/navigation";
+
+export async function GET(request: Request) {
+  redirect("https://nextjs.org/");
+}
+```
