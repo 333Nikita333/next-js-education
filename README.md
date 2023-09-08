@@ -1,2 +1,2 @@
-# NextJS (old) Highlights - Part 1
+# NextJS New Highlights
 
