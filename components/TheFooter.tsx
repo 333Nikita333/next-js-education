@@ -1,5 +1,5 @@
 const TheFooter = () => {
-  return <footer className="container">Created by &copy;MishaNep</footer>;
+  return <footer className="container">Created by &copy;Mykyta</footer>;
 };
 
 export { TheFooter };
