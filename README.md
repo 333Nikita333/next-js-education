@@ -1,6 +1,4 @@
-# Next 13
-
-## Server and client components
+# Server and client components
 
 ![React components](example-1.webp)
 
