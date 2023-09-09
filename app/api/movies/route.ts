@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-// работа с приватными ключами
 export async function GET(req: Request) {
   const API_KEY = process.env.OMDB_SECRET;
   const query = "matrix";
