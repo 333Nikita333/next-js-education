@@ -11,3 +11,6 @@
 
 ## branch education-part-4
 *API endpoints in NextJS*
+
+## branch education-part-5
+*Authentication and private routes*
