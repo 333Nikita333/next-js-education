@@ -3,8 +3,6 @@ import { getServerSession } from "next-auth/next";
 import Image from "next/image";
 
 const Profile = async () => {
-  // хелпер, который расботает на сервере и получает данные
-  // текущей сессии в качестве аргумента принимает конфиг
   const session = await getServerSession(authConfig);
 
   return (

@@ -1,4 +1,5 @@
 "use client";
+// здесь используется RSC (react server component)
 import Link from "next/link";
 import useSWR from "swr";
 import { getAllPosts } from "@/services/getPosts";

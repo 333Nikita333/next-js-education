@@ -13,8 +13,6 @@ type Props = {
 
 const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
-
-  //хук можно использовать только в клиентском компоненте
   const session = useSession();
   // console.log(" const session = useSession() ==>", session);
 
@@ -35,7 +33,6 @@ const Navigation = ({ navLinks }: Props) => {
       })}
       {session?.data && <Link href="/profile">Profile</Link>}
       {session?.data ? (
-        //callbackUrl: "/" - для перенаправления после разлогинивания на главную страницу
         <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
           Sign Out
         </Link>

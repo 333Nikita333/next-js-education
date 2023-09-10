@@ -1,1 +1,1 @@
-# Authentication and private routes
+# Rendering options

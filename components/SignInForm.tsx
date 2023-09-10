@@ -1,11 +1,9 @@
 "use client";
-
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { FormEventHandler } from "react";
 
 const SignInForm = () => {
-  // для управления роутингом
   const router = useRouter();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
@@ -16,8 +14,6 @@ const SignInForm = () => {
     const res = await signIn("credentials", {
       email: formData.get("email"),
       password: formData.get("password"),
-      // в данном случае false, т.к. в случае ошибки форма переинет на
-      // изначальную форму,которая была автоcгенерирована
       redirect: false,
     });
 
