@@ -16,7 +16,7 @@ const Navigation = ({ navLinks }: Props) => {
 
   //хук можно использовать только в клиентском компоненте
   const session = useSession();
-  console.log(" const session = useSession() ==>", session);
+  // console.log(" const session = useSession() ==>", session);
 
   return (
     <>
@@ -35,11 +35,12 @@ const Navigation = ({ navLinks }: Props) => {
       })}
       {session?.data && <Link href="/profile">Profile</Link>}
       {session?.data ? (
+        //callbackUrl: "/" - для перенаправления после разлогинивания на главную страницу
         <Link href="#" onClick={() => signOut({ callbackUrl: "/" })}>
           Sign Out
         </Link>
       ) : (
-        <Link href="/api/auth/signin">Sign In</Link>
+        <Link href="/signin">Sign In</Link>
       )}
     </>
   );
