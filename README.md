@@ -14,3 +14,6 @@
 
 ## branch education-part-5
 *Authentication and private routes*
+
+## branch education-part-6
+*Rendering options*
