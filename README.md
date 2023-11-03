@@ -14,7 +14,7 @@
 
 ## branch education-part-5
 *Authentication and private routes*
-
+[Link](https://next-js-education-git-education-part-5-333nikita333.vercel.app/)
 ## branch education-part-6
 *Rendering options*
 
