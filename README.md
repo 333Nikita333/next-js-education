@@ -17,3 +17,6 @@
 
 ## branch education-part-6
 *Rendering options*
+
+## branch education-part-8
+*New functionality of NextJS 14. Server actions*
