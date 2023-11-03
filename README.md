@@ -1,5 +1,3 @@
-# NextJs Education
-
 # NextJS Education
 
 ## branch main
