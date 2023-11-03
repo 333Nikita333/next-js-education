@@ -6,7 +6,7 @@ export async function DELETE(
   req: Request,
   { params }: { params: { id: string } }
 ) {
-  const id = params?.id;
+  const id = params.id;
 
   const headerList = headers();
   const type = headerList.get("Content-Type");
@@ -14,7 +14,8 @@ export async function DELETE(
   const cookieList = cookies();
   const cookie2 = cookieList.get("Cookie_2")?.value;
 
-  // redirect("/blog");
+   // logic delete post
+  // redirect('/blog')
 
   return NextResponse.json({ id, type, cookie2 });
 }

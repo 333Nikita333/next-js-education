@@ -10,6 +10,7 @@ type Props = {
 const PostSearch = () => {
   const { mutate } = useSWR("posts");
   const [search, setSearch] = useState<string>("");
+// const getPostsBySearch = usePosts((state) => state.getPostsBySearch);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault();

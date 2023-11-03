@@ -23,6 +23,18 @@
       "id": 4,
       "title": "NextJS 13.4.7 was released!!!!!!",
       "body": "A lot of changes in the core library plus documentation updates. Fixed issues with NextJS examples and many more..."
+    },
+    {
+      "title": "NextJS released",
+      "body": "new coming!",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "NextJS 14 released",
+      "body": "something new coming",
+      "userId": 1,
+      "id": 6
     }
   ]
 }
