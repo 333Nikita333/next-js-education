@@ -2,7 +2,7 @@
 
 ## branch main
 *NextJs old basic principles*
-<br>[Link](next-js-education-topaz.vercel.app)
+<br>[Link](https://next-js-education-topaz.vercel.app/)
 
 ## branch education-part-2
 *NextJS New Highlights*
